@@ -1,10 +1,10 @@
-package org.example.managementsystem;
+package org.example.universitymanagementsystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ManagementSystemApplicationTests {
+class UniversityManagementSystemApplicationTests {
 
     @Test
     void contextLoads() {
