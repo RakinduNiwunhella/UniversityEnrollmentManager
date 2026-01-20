@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/alumni")
+@CrossOrigin(origins = "http://localhost:5173")
 public class AlumniController {
 
     private final AlumniService service;
@@ -18,6 +19,7 @@ public class AlumniController {
 
     @PostMapping
     public Alumni create(@RequestBody Alumni alumni) {
+        System.out.println("ALUMNI RECEIVED: " + alumni.getEmail());
         return service.save(alumni);
     }
 

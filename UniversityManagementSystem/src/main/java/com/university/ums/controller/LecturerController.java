@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/lecturers")
+@CrossOrigin(origins = "http://localhost:5173")
 public class LecturerController {
 
     private final LecturerService service;
@@ -18,6 +19,7 @@ public class LecturerController {
 
     @PostMapping
     public Lecturer create(@RequestBody Lecturer lecturer) {
+        System.out.println("LECTURER RECEIVED: " + lecturer.getEmail());
         return service.save(lecturer);
     }
 
