@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DashboardLayout from "../layouts/DashboardLayout";
 import StatCard from "../components/StatCard";
 import api from "../api/api";
+import { Users, UserCheck, GraduationCap } from "lucide-react";
 
 export default function Dashboard() {
   const [stats, setStats] = useState({
@@ -36,9 +37,23 @@ export default function Dashboard() {
       <h1 className="text-2xl font-bold mb-6">Overview</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <StatCard title="Students" value={stats.students} />
-        <StatCard title="Lecturers" value={stats.lecturers} />
-        <StatCard title="Alumni" value={stats.alumni} />
+<StatCard
+  title="Students"
+  value={stats.students}
+  icon={<Users size={36} />}
+/>
+
+<StatCard
+  title="Lecturers"
+  value={stats.lecturers}
+  icon={<UserCheck size={36} />}
+/>
+
+<StatCard
+  title="Alumni"
+  value={stats.alumni}
+  icon={<GraduationCap size={36} />}
+/>
       </div>
     </DashboardLayout>
   );
