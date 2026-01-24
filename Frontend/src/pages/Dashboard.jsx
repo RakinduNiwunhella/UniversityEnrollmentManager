@@ -10,6 +10,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
 export default function Dashboard() {
@@ -71,12 +72,38 @@ export default function Dashboard() {
       </div>
       <div className="bg-white rounded-xl shadow p-6 mt-8">
         <h2 className="text-lg font-semibold mb-4">System Overview</h2>
-        <ResponsiveContainer width="100%" height={250}>
-          <BarChart data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="value" />
+
+        <ResponsiveContainer width="100%" height={280}>
+          <BarChart
+            data={data}
+            margin={{ top: 10, right: 20, left: 0, bottom: 0 }}
+            barSize={50}
+          >
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis
+              dataKey="name"
+              tick={{ fill: "#475569", fontSize: 12 }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis
+              tick={{ fill: "#475569", fontSize: 12 }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <Tooltip
+              cursor={{ fill: "#f1f5f9" }}
+              contentStyle={{
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+              }}
+            />
+            <Bar
+              dataKey="value"
+              radius={[8, 8, 0, 0]}
+              fill="#2563eb"
+            />
           </BarChart>
         </ResponsiveContainer>
       </div>
